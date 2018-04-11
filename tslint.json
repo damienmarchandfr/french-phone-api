@@ -1,0 +1,25 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "max-line-length": {
+            "options": [120]
+        },
+        "indent": [true, "spaces"],
+        "quotemark": [true, "single"],
+        "semicolon": [true, "never"],
+        "no-console": [false],
+        "one-line": [true, "check-catch", "check-finally", "check-else"],
+        "whitespace": [true, "check-branch", "check-operator", "check-typecast"],
+        "no-trailing-whitespace": true,
+        "trailing-comma" : false,
+        "max-classes-per-file":false,
+        "member-access":false,
+        "no-var-requires":false
+    },
+    "rulesDirectory": [],
+    "tslint.autoFixOnSave" : true
+}
