@@ -3,12 +3,36 @@
   "version": "1.0.0",
   "main": "./dist/index.js",
   "author": "Damien Marchand",
+  "description": "Get informations of a french phone number.",
+  "keywords": [
+    "phone",
+    "french",
+    "informations"
+  ],
   "license": "MIT",
   "dependencies": {
     "awesome-phonenumber": "^2.2.5",
     "cheerio": "^1.0.0-rc.2",
-    "eslint": "^4.19.1",
     "request": "^2.85.0",
     "request-promise": "^4.2.2"
-  }
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.6",
+    "@types/mocha": "^5.2.5",
+    "@types/sinon": "^5.0.2",
+    "chai": "^4.2.0",
+    "eslint": "^5.6.1",
+    "mocha": "^5.2.0",
+    "pre-commit": "^1.2.2",
+    "sinon": "^6.3.4",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1"
+  },
+  "scripts": {
+    "test": "mocha -r ts-node/register ./tests/**/*.test.ts --exit --reporter nyan",
+    "build" : "tsc"
+  },
+  "pre-commit": [
+    "build","test"
+  ]
 }

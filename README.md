@@ -1,5 +1,3 @@
-![logo](frenchPhone.jpg)
-
 # FRENCH PHONE API
 This small JavaScript lib returns informations of a french phone number from this [website](https://www.recherche-inverse.com/) in a json format.
 
@@ -8,7 +6,9 @@ It works with FRENCH phone numbers ONLY.
 ## Installation
 
     yarn add https://github.com/damienmarchandfr/french-phone-api
-    or with npm
+    
+or
+  
     npm i https://github.com/damienmarchandfr/french-phone-api
 
 ##  Use
@@ -35,8 +35,25 @@ It works with FRENCH phone numbers ONLY.
 		console.log(error)
 	}
 
-UNDER [WTFPL](http://www.wtfpl.net/) LICENCE
+## Response
 
-![licence](http://www.wtfpl.net/wp-content/uploads/2012/12/logo-220x1601.png)
+	{ 
+		input: '0778453625',
+	   	formated: '+33778453625',
+   		isMobile: true,
+   		danger: 0,
+  		operator: 'free' 
+	}
+
+
+## Test
+
+To run tests
+
+	yarn run test
+
+or
+
+	npm run test
 
 

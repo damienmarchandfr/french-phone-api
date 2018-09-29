@@ -31,75 +31,101 @@ export class FrenchPhoneInfoGetter {
     this.input = phone.trim()
   }
 
+  public async requestMobileHTML(input: string): Promise<string>{
+    const urlMobile =
+    'https://www.recherche-inverse.com/annuaire-inverse-portable/'
+    return await Rq(urlMobile + input)
+  }
+
+  public async requestFixHTML(input: string): Promise<string>{
+    const urlFixe =
+    'https://www.recherche-inverse.com/annuaire-inverse-fixe/'
+    return await Rq(urlFixe + input)
+  }
+
   public async getInformations(): Promise<FrenchPhoneInformations> {
+    // Mobile phone
+    if (this.pn.isMobile()) {
+      const response = await this.requestMobileHTML(this.input)
+      return this.parseMobileHTML(response)
+    } else {
+      const response = await this.requestFixHTML(this.input)
+      return this.parseFixHTML(response)
+    }
+  }
+
+  private parseMobileHTML(html: string): FrenchPhoneInformations{
+    const $ = Cheerio.load(html)
     const info: FrenchPhoneInformations = {}
+
     info.input = this.input
     info.formated = this.pn.getNumber()
-    if (this.pn.isMobile()) {
-      const urlMobile =
-        'https://www.recherche-inverse.com/annuaire-inverse-portable/'
-      const response: any = await Rq(urlMobile + this.input)
-      const $ = Cheerio.load(response)
 
-      info.isMobile =
-        $('.num_type')
-          .find('.value')
-          .text()
-          .trim() === 'Numéro mobile'
-
-      info.danger = parseInt(
-        $('.dangerousness')
-          .text()
-          .split('\n')[2]
-          .replace(/\s/g, '')
-          .trim(),
-        10
-      )
-
-      info.operator = $('.num_operator')
+    info.isMobile =
+      $('.num_type')
         .find('.value')
         .text()
-        .toLowerCase()
-        .trim()
+        .trim() === 'Numéro mobile'
 
-      info.formated = $('.abroad')
-        .find('.value')
+    info.danger = parseInt(
+      $('.dangerousness')
         .text()
+        .split('\n')[2]
         .replace(/\s/g, '')
-        .trim()
-    } else {
-      const urlFixe =
-        'https://www.recherche-inverse.com/annuaire-inverse-fixe/'
-      const response: any = await Rq(urlFixe + this.input)
-      const $ = Cheerio.load(response)
+        .trim(),
+      10
+    )
 
-      info.isMobile =
-        $('.num_type')
-          .find('.value')
-          .text()
-          .trim() === 'Numéro mobile'
+    info.operator = $('.num_operator')
+      .find('.value')
+      .text()
+      .toLowerCase()
+      .trim()
 
-      info.danger = parseInt(
-        $('.dangerousness')
-          .text()
-          .split('\n')[2]
-          .replace(/\s/g, '')
-          .trim(),
-        10
-      )
+    info.formated = $('.abroad')
+      .find('.value')
+      .text()
+      .replace(/\s/g, '')
+      .trim()
 
-      info.operator = $('.num_operator')
-        .find('.value')
-        .text()
-        .toLowerCase()
-        .trim()
-
-      info.formated = $('.abroad')
-        .find('.value')
-        .text()
-        .replace(/\s/g, '')
-        .trim()
-    }
     return info
   }
+
+  private parseFixHTML(html: string): FrenchPhoneInformations {
+    const $ = Cheerio.load(html)
+    const info: FrenchPhoneInformations = {}
+
+    info.input = this.input
+    info.formated = this.pn.getNumber()
+
+    info.isMobile =
+      $('.num_type')
+        .find('.value')
+        .text()
+        .trim() === 'Numéro mobile'
+
+    info.danger = parseInt(
+      $('.dangerousness')
+        .text()
+        .split('\n')[2]
+        .replace(/\s/g, '')
+        .trim(),
+      10
+    )
+
+    info.operator = $('.num_operator')
+      .find('.value')
+      .text()
+      .toLowerCase()
+      .trim()
+
+    info.formated = $('.abroad')
+      .find('.value')
+      .text()
+      .replace(/\s/g, '')
+      .trim()
+
+    return info
+  }
+
 }
