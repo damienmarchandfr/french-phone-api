@@ -33,6 +33,6 @@
     "build" : "tsc"
   },
   "pre-commit": [
-    "build","test"
+    "test"
   ]
 }
