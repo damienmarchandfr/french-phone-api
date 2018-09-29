@@ -5,11 +5,11 @@ It works with FRENCH phone numbers ONLY.
 
 ## Installation
 
-    yarn add https://github.com/damienmarchandfr/french-phone-api
+    yarn add french-phone-api
     
 or
   
-    npm i https://github.com/damienmarchandfr/french-phone-api
+    npm i french-phone-api --save
 
 ##  Use
 

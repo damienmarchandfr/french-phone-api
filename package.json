@@ -1,6 +1,6 @@
 {
   "name": "french-phone-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./dist/index.js",
   "author": "Damien Marchand",
   "description": "Get informations of a french phone number.",
