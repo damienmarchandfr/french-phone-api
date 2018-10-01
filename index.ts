@@ -43,7 +43,7 @@ export class FrenchPhoneInfoGetter {
     return await Rq(urlFixe + input)
   }
 
-  public async getInformations(): Promise<FrenchPhoneInformations> {
+  public async getInformation(): Promise<FrenchPhoneInformations> {
     // Mobile phone
     if (this.pn.isMobile()) {
       const response = await this.requestMobileHTML(this.input)

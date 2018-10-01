@@ -3,7 +3,7 @@ import {FrenchPhoneInfoGetter} from '../index'
 
 const fg = new FrenchPhoneInfoGetter('0778453625')
 
-fg.getInformations()
+fg.getInformation()
     .then((info) => {
         console.log(info)
     })

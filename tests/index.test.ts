@@ -34,7 +34,7 @@ describe('Test MailBoxLayer class', () => {
     it('should return phone informations', async () => {
         const fpig = new FrenchPhoneInfoGetter('0473512671')
         stub = sinon.stub(fpig, 'requestFixHTML').resolves(htmlFix)
-        const t = await fpig.getInformations()
+        const t = await fpig.getInformation()
         expect(t.danger).to.eql(0)
         expect(t.formatted).to.eql('+33473512671')
         expect(t.input).to.eql('0473512671')
@@ -45,7 +45,7 @@ describe('Test MailBoxLayer class', () => {
     it('should return mobile phone informations', async () => {
         const fpig = new FrenchPhoneInfoGetter('0782301615')
         stub = sinon.stub(fpig, 'requestMobileHTML').resolves(htmlMobile)
-        const t = await fpig.getInformations()
+        const t = await fpig.getInformation()
         expect(t.danger).to.eql(0)
         expect(t.formatted).to.eql('+33782301615')
         expect(t.input).to.eql('0782301615')

@@ -99,7 +99,7 @@ var FrenchPhoneInfoGetter = (function () {
             });
         });
     };
-    FrenchPhoneInfoGetter.prototype.getInformations = function () {
+    FrenchPhoneInfoGetter.prototype.getInformation = function () {
         return __awaiter(this, void 0, void 0, function () {
             var response, response;
             return __generator(this, function (_a) {

@@ -1,7 +1,7 @@
 //How to test a FRENCH phone number
 var F = require('../dist')
 
-new F.FrenchPhoneInfoGetter('0782301616').getInformations().then((informations)=>{
+new F.FrenchPhoneInfoGetter('0782301616').getInformation().then((informations)=>{
     console.log(informations)
 })
 .catch(err=>{
