@@ -6,7 +6,7 @@ export class FrenchPhoneInformations {
   isMobile?: boolean
   danger?: number
   operator?: string
-  formated?: string
+  formatted?: string
   input?: string
 }
 
@@ -59,7 +59,7 @@ export class FrenchPhoneInfoGetter {
     const info: FrenchPhoneInformations = {}
 
     info.input = this.input
-    info.formated = this.pn.getNumber()
+    info.formatted = this.pn.getNumber()
 
     info.isMobile =
       $('.num_type')
@@ -82,7 +82,7 @@ export class FrenchPhoneInfoGetter {
       .toLowerCase()
       .trim()
 
-    info.formated = $('.abroad')
+    info.formatted = $('.abroad')
       .find('.value')
       .text()
       .replace(/\s/g, '')
@@ -96,7 +96,7 @@ export class FrenchPhoneInfoGetter {
     const info: FrenchPhoneInformations = {}
 
     info.input = this.input
-    info.formated = this.pn.getNumber()
+    info.formatted = this.pn.getNumber()
 
     info.isMobile =
       $('.num_type')
@@ -119,7 +119,7 @@ export class FrenchPhoneInfoGetter {
       .toLowerCase()
       .trim()
 
-    info.formated = $('.abroad')
+    info.formatted = $('.abroad')
       .find('.value')
       .text()
       .replace(/\s/g, '')

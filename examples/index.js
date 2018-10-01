@@ -10,7 +10,7 @@ new F.FrenchPhoneInfoGetter('0782301616').getInformations().then((informations)=
 
 //OUPUT
 // { input: '0782301616',
-//   formated: '+33782301616',
+//   formatted: '+33782301616',
 //   isMobile: true,
 //   danger: 0,
 //   operator: 'free mobile' }

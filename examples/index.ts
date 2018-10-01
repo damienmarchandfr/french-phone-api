@@ -13,7 +13,7 @@ fg.getInformations()
 
 // OUPUT
 // { input: '0778453625',
-//   formated: '+33778453625',
+//   formatted: '+33778453625',
 //   isMobile: true,
 //   danger: 0,
 //   operator: '' }

@@ -36,7 +36,7 @@ describe('Test MailBoxLayer class', () => {
         stub = sinon.stub(fpig, 'requestFixHTML').resolves(htmlFix)
         const t = await fpig.getInformations()
         expect(t.danger).to.eql(0)
-        expect(t.formated).to.eql('+33473512671')
+        expect(t.formatted).to.eql('+33473512671')
         expect(t.input).to.eql('0473512671')
         expect(t.isMobile).to.be.false
         expect(t.operator).to.eql('')
@@ -47,7 +47,7 @@ describe('Test MailBoxLayer class', () => {
         stub = sinon.stub(fpig, 'requestMobileHTML').resolves(htmlMobile)
         const t = await fpig.getInformations()
         expect(t.danger).to.eql(0)
-        expect(t.formated).to.eql('+33782301615')
+        expect(t.formatted).to.eql('+33782301615')
         expect(t.input).to.eql('0782301615')
         expect(t.isMobile).to.be.true
         expect(t.operator).to.eql('free mobile')

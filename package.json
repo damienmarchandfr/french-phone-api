@@ -1,13 +1,20 @@
 {
   "name": "french-phone-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./dist/index.js",
   "author": "Damien Marchand",
-  "description": "Get informations of a french phone number.",
+  "description": "Get information about any French phone numbers.",
   "keywords": [
     "phone",
     "french",
-    "informations"
+    "information"
+  ],
+  "contributors": [
+    {
+      "email": "cecileprezut@hotmail.com",
+      "name": "Cecile Prezut",
+      "url": "https://github.com/cecileprezut"
+    }
   ],
   "repository": {
     "url": "https://github.com/damienmarchandfr/french-phone-api"

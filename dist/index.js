@@ -122,7 +122,7 @@ var FrenchPhoneInfoGetter = (function () {
         var $ = Cheerio.load(html);
         var info = {};
         info.input = this.input;
-        info.formated = this.pn.getNumber();
+        info.formatted = this.pn.getNumber();
         info.isMobile =
             $('.num_type')
                 .find('.value')
@@ -138,7 +138,7 @@ var FrenchPhoneInfoGetter = (function () {
             .text()
             .toLowerCase()
             .trim();
-        info.formated = $('.abroad')
+        info.formatted = $('.abroad')
             .find('.value')
             .text()
             .replace(/\s/g, '')
@@ -149,7 +149,7 @@ var FrenchPhoneInfoGetter = (function () {
         var $ = Cheerio.load(html);
         var info = {};
         info.input = this.input;
-        info.formated = this.pn.getNumber();
+        info.formatted = this.pn.getNumber();
         info.isMobile =
             $('.num_type')
                 .find('.value')
@@ -165,7 +165,7 @@ var FrenchPhoneInfoGetter = (function () {
             .text()
             .toLowerCase()
             .trim();
-        info.formated = $('.abroad')
+        info.formatted = $('.abroad')
             .find('.value')
             .text()
             .replace(/\s/g, '')
