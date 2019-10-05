@@ -1,6 +1,8 @@
 # FRENCH PHONE API
 This small JavaScript library returns information about any French phone numbers from this [website](https://www.recherche-inverse.com/) in a JSON format.
 
+[![Build Status](https://travis-ci.com/damienmarchandfr/french-phone-api.svg?branch=master)](https://travis-ci.com/damienmarchandfr/french-phone-api)
+
 **It works with FRENCH phone numbers ONLY.**
 
 ## Installation
