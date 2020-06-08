@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.FrenchPhoneInfoGetter = exports.FrenchPhoneInfoError = exports.FrenchPhoneInformations = void 0;
 const Cheerio = require('cheerio');
 const Rq = require('request-promise');
 const PhoneNumber = require('awesome-phonenumber');
